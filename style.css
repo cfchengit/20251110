@@ -1,0 +1,115 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 避免畫布產生捲軸 */
+}
+
+canvas {
+  display: block;
+}
+
+/* Iframe 容器 */
+#iframe-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none; /* 預設隱藏 */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Iframe 本身 */
+#content-iframe {
+  width: 90%;
+  height: 90%;
+  border: 2px solid #fff;
+}
+
+/* 關閉按鈕 */
+#close-iframe-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #f71735;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* 側邊選單 */
+#side-menu {
+  position: fixed;
+  top: 0;
+  left: -300px; /* 預設隱藏在左側 */
+  width: 300px;
+  height: 100%;
+  background-color: #333;
+  padding-top: 20px;
+  transition: left 0.3s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+#side-menu.menu-visible {
+  left: 0; /* 滑鼠移入時顯示 */
+}
+
+#side-menu a {
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+}
+
+#side-menu a:hover {
+  background-color: #575757;
+}
+
+.submenu {
+  display: none; /* 預設隱藏子選單 */
+  padding-left: 20px;
+  background-color: #444;
+}
+
+.menu-item:hover .submenu {
+  display: block; /* 滑鼠移到父項目時顯示子選單 */
+}
+
+
+.bitcount-ink-font1 { /* 英文字體 */
+  font-family: "Bitcount Ink", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0,
+    "SZP1" 0,
+    "SZP2" 0,
+    "XPN1" 0,
+    "XPN2" 0,
+    "YPN1" 0,
+    "YPN2" 0;
+}
+
+.bungee-spice-regular { /* 英文字體 */
+  font-family: "Bungee Spice", sans-serif; 
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-sans-tc-font2 { /* 中文字體 */
+  font-family: "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto; /* 可選 */
+  font-weight: 400; /*   可根據需要調整字重 */
+  
+  font-style: normal;
+}
